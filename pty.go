@@ -51,6 +51,7 @@ func executeCommand(config Config) (string, error) {
 		printError("Cmd provided non-zero result", err)
 	}
 	if config.ShowCmd {
+		return fmt.Sprintf("$ - %s\n\n%s", config.Execute, out.String()), nil
 	}
 	return out.String(), nil
 }
